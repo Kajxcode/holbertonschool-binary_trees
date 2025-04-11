@@ -1,5 +1,6 @@
 #include "binary_trees.h"
-
+#include <stdlib.h>
+#include <stddef.h>
 /**
 *binary_tree_preorder - Prints a binary tree using pre-order traversal
 *@tree: Pointer to the root node of the tree to traverse
