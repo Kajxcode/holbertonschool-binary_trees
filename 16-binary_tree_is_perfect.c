@@ -10,7 +10,7 @@
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
 	size_t depth = 0;
-	const binary_tree_t* current = tree;
+	const binary_tree_t *current = tree;
 
 	while (current && current->parent)
 	{
@@ -59,6 +59,9 @@ int is_perfect(const binary_tree_t *tree, int height)
 		return (0);
 	}
 
+	if (!tree->left || !tree->right)
+		return (0);
+
 	return (is_perfect(tree->left, height) && is_perfect(tree->right, height));
 }
 
@@ -76,5 +79,5 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	height = binary_tree_height(tree);
 
-	return (is_perfect(tree, height));
+	return (is_perfect(tree, height - 1));
 }
